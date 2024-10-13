@@ -1,8 +1,13 @@
 # Ex02 Django ORM Web Application
-## Date: 
+## Date: 27-09-2024
 
-## AIM:
-To develop a Django application to store and retrieve data from a Football Players database using Object Relational Mapping(ORM).
+## AIM
+To develop a Django application to store and retrieve data from a Bank database using Object Relational Mapping(ORM).
+
+## Entity Relationship Diagram
+
+![er_img](https://github.com/user-attachments/assets/1f477cf2-d9d0-4b75-97eb-b2bbaf50d212)
+
 
 ## DESIGN STEPS
 
@@ -16,27 +21,35 @@ Create a new app in Django project
 Enter the code for admin.py and models.py
 
 ### STEP 4:
-Execute Django admin and create 10 Football players
+Execute Django admin and create details for 10 customers.
 
-## PROGRAM:
+## PROGRAM
+
 ```
-models.py
+from django.contrib import admin
+from .models import Employee,EmployeeAdmin
+admin.site.register(Employee,EmployeeAdmin)
+```
+
+```
 from django.db import models
 from django.contrib import admin
-class Football_player (models.Model):
-    name=models.CharField(max_length=20)
+class Employee (models.Model):
+    eid=models.IntegerField(primary_key=True)
+    name=models.CharField(max_length=100)
+    salary=models.IntegerField()
     age=models.IntegerField()
-    country=models.CharField(max_length=20)
-    height=models.IntegerField()
     email=models.EmailField()
-class Football_playerAdmin(admin.ModelAdmin):
-    list_display=['name','age','country','height','email']
-from django.contrib import admin
-from .models import Football_player,Football_playerAdmin
-admin.site.register(Football_player,Football_playerAdmin)
+ 
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display=('eid','name','salary','age','email')
 ```
-## OUTPUT:
-![Screenshot 2023-10-19 114748](https://github.com/HariharanJayavel/ORM/assets/144870546/853cb75f-0204-4b91-8697-196f9cb6d0be)
+
+## OUTPUT
+
+![op_img](https://github.com/user-attachments/assets/7778de86-1ba9-484b-866d-9940f9f934ea)
+
+
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
