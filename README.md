@@ -47,10 +47,6 @@ class EmployeeAdmin(admin.ModelAdmin):
 ```
 
 ## OUTPUT :
-
-![op_img](https://github.com/user-attachments/assets/7778de86-1ba9-484b-866d-9940f9f934ea)
-
-
-
+![Django-Admin](https://github.com/user-attachments/assets/2cdabf20-eb73-4480-a89f-919b153a4792)
 ## RESULT :
 Thus the program for creating a database using ORM hass been executed successfully
