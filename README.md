@@ -51,7 +51,8 @@ admin.site.register(bankloan,userAdmin)
 ```
 
 ## OUTPUT :
-![alt text](<Screenshot 2024-11-17 222818.png>)
+![Screenshot 2024-11-17 222818](https://github.com/user-attachments/assets/600f087e-bcce-417a-9d26-8c60fcd06030)
+
 
 Include the screenshot of your admin page.
 
