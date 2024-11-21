@@ -1,16 +1,14 @@
-# Django ORM Web Application
-# EX - 2
-# Date : 29-09-2024
+# Ex02 Django ORM Web Application
+## Date: 29/9/2024
 
-# AIM :
-To develop a Django application to store and retrieve data from a Bank database using Object Relational Mapping(ORM).
+## AIM :
+To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
 
-## Entity Relationship Diagram :
+## ENTITY RELATIONSHIP DIAGRAM :
 
-![er_img](https://github.com/user-attachments/assets/1f477cf2-d9d0-4b75-97eb-b2bbaf50d212)
+![alt text](<WhatsApp Image 2024-11-17 at 22.33.37_87524f35.jpg>)
 
-
-## DESIGN STEPS :
+## DESIGN STEPS
 
 ### STEP 1:
 Clone the problem from GitHub
@@ -22,31 +20,41 @@ Create a new app in Django project
 Enter the code for admin.py and models.py
 
 ### STEP 4:
-Execute Django admin and create details for 10 customers.
+Execute Django admin and create details for 10 books
 
 ## PROGRAM :
 
 ```
-from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
-```
+models.py
 
-```
 from django.db import models
 from django.contrib import admin
-class Employee (models.Model):
-    eid=models.IntegerField(primary_key=True)
-    name=models.CharField(max_length=100)
-    salary=models.IntegerField()
-    age=models.IntegerField()
+class bankloan(models.Model):
+    customer_name=models.CharField(max_length=100,primary_key=True)
+    customer_id=models.CharField(max_length=100)
+    loan_no=models.IntegerField()
+    loan_amount=models.IntegerField()
     email=models.EmailField()
  
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display=('eid','name','salary','age','email')
+class userAdmin(admin.ModelAdmin):
+    list_display=('customer_name','customer_id','loan_no','loan_amount','email')
+# Create your models here.
+
+admin.py
+
+from django.contrib import admin
+from .models import bankloan,userAdmin
+admin.site.register(bankloan,userAdmin)
+
+# Register your models here.
+
 ```
 
 ## OUTPUT :
-![Django-Admin](https://github.com/user-attachments/assets/2cdabf20-eb73-4480-a89f-919b153a4792)
+![alt text](<Screenshot 2024-11-17 222818.png>)
+
+Include the screenshot of your admin page.
+
+
 ## RESULT :
 Thus the program for creating a database using ORM hass been executed successfully
